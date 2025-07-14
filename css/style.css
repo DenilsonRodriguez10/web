@@ -1,0 +1,323 @@
+/* css/style.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    letter-spacing: 1px;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header h1 a:hover {
+    color: #e2e6ea;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.producto-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.producto-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.producto-card h2 {
+    font-size: 1.6em;
+    margin: 15px 0 5px;
+    padding: 0 15px;
+    color: #007bff;
+}
+
+.producto-card p {
+    font-size: 0.95em;
+    color: #6c757d;
+    padding: 0 15px;
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.producto-card .precio {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #28a745;
+    margin: 10px 0 20px;
+    padding: 0 15px;
+}
+
+.producto-card .btn {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.producto-card .btn:hover {
+    background-color: #0056b3;
+}
+
+.producto-card.personalizable {
+    border-color: #28a745; /* Green border for customizable */
+    background-color: #f0fff4; /* Light green background */
+}
+
+.producto-card.personalizable .btn {
+    background-color: #28a745;
+}
+
+.producto-card.personalizable .btn:hover {
+    background-color: #218838;
+}
+
+/* Detail Page Styles */
+.producto-detalle {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.producto-detalle .imagen {
+    flex: 1;
+    min-width: 300px; /* Ensure image doesn't get too small */
+    max-width: 500px;
+}
+
+.producto-detalle .imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.producto-detalle .info {
+    flex: 2;
+    min-width: 350px; /* Ensure info section doesn't get too small */
+}
+
+.producto-detalle h2 {
+    font-size: 3em;
+    margin-top: 0;
+    color: #343a40;
+}
+
+.producto-detalle .precio {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 25px;
+}
+
+.producto-detalle p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.producto-detalle form {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.producto-detalle form h3 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.producto-detalle form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #495057;
+}
+
+.producto-detalle form input[type="text"],
+.producto-detalle form select,
+.producto-detalle form input[type="number"] {
+    width: calc(100% - 22px); /* Account for padding */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box; /* Include padding in width */
+    font-size: 1em;
+}
+
+.producto-detalle form input[type="text"]:focus,
+.producto-detalle form select:focus,
+.producto-detalle form input[type="number"]:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.producto-detalle form input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    width: auto;
+    display: inline-block;
+}
+
+.producto-detalle form input[type="submit"]:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+.mensaje-confirmacion {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+.mensaje-confirmacion.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.mensaje-confirmacion.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Color preview for customization */
+#colorPreview {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ccc;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #343a40;
+    color: white;
+    margin-top: 40px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+    .producto-detalle {
+        flex-direction: column;
+    }
+    .producto-detalle .imagen,
+    .producto-detalle .info {
+        max-width: 100%;
+        min-width: unset;
+    }
+}
